@@ -54,6 +54,7 @@ const SimpleStorage = () => {
 	window.ethereum.on('chainChanged', chainChangedHandler);
 
 	const updateEthers = () => {
+    //Директива let позволяет объявить локальную переменную с областью видимости, ограниченной текущим блоком кода .
 		let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
 		setProvider(tempProvider);
 
@@ -65,13 +66,13 @@ const SimpleStorage = () => {
 	}
 
 	const setHandler = (event) => {
-		event.preventDefault();
+		event.preventDefault(); //java script - предотвращает действие, в данном случае submit, который перезагрузит по умолчанию страницу
 		console.log('sending ' + event.target.setText.value + ' to the contract');
-		contract.set(event.target.setText.value);
+		contract.set(event.target.setText.value); //вызываем функцию SET нашего контракта
 	}
 
 	const getCurrentVal = async () => {
-		let val = await contract.get();
+		let val = await contract.get(); //вызываем функцию GET нашего контракта
 		setCurrentContractVal(val);
 	}
 
