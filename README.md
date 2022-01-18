@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+before starting our App we need to deploy smart contract
+###add files
+  truffle-config.js
+  migrations/1_deploy_contracts.js
+###compile our smart contract
+  truffle compile
+###deploy our smart contract
+  truffle migrate
+after deploying contract we need to get it contract address and abi(json file)
